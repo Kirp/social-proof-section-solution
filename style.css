@@ -1,0 +1,247 @@
+
+:root {
+    /* ### Primary */
+    --very_dark_magenta: hsl(300, 43%, 22%);
+    --soft_pink: hsl(333, 80%, 67%);
+
+    /* ### Neutral */
+    --dark_grayish_magenta: hsl(303, 10%, 53%);
+    --light_grayish_magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+@font-face {
+    font-family: LeagueSpartan;
+    src: url(./fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: LeagueSpartan, Arial;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: var(--white);
+    color: var(--dark_grayish_magenta);
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* position: relative; */
+}
+
+#bg-top-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bg-bottom-image {
+    position:absolute;
+    /* bottom: -72vh; */
+    right: 1px;
+    bottom: 1px;
+
+}
+
+article {
+    display:flex;
+    width: 22.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* display: none; */
+}
+
+.description {
+    text-align: center;
+}
+
+.description h1 {
+    font-size: 2em;
+    width: 7em;
+    margin: 0 auto;
+    padding: 1em;
+    color: var(--very_dark_magenta);
+}
+
+
+.description p {
+    font-weight: 500;
+    width: auto;
+    line-height: 1.25em;
+}
+
+.reviews {
+    margin: 1em 0;
+    width: 95%;
+}
+
+.rated-review {
+    margin: 2em 0;
+    background-color: var(--light_grayish_magenta);
+}
+
+.star-row {
+    display: flex;
+    padding-top: 1em;
+    justify-content: center;
+}
+
+.reviews p {
+    font-weight: 700;
+    color: var(--very_dark_magenta);
+    text-align: center;
+    padding: 1em 0;
+}
+
+.comments {
+    margin: 1em 0;
+    color: var(--white);
+}
+
+.comments * {
+    display: inline-block;
+}
+
+.buyer-comments {
+    background-color: var(--very_dark_magenta);
+    margin: 1em 0;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+
+.comments img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+.buyer-image {
+    width: 2em;
+}
+
+.buyer-details {
+    margin-left: 1.5em;
+}
+
+.buyer-details p {
+    display: block;
+    font-weight: 400;
+    text-align: left;
+}
+
+.buyer-details p:last-of-type {
+    color: var(--soft_pink);
+}
+
+.buyer-id {
+    display: flex;
+    grid-template-areas: "";
+}
+
+.buyer-comment {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+    font-size: .9em;
+    text-align: left;
+}
+
+
+
+@media(min-width: 1000px){
+
+    .wrapper{
+        justify-content: center;
+    }
+
+    
+
+    article {
+        display: grid;
+        width: 80%;
+        gap: 0.6em;
+        grid-template-columns: auto auto auto auto;
+        align-items: baseline;
+    }
+
+    .description {
+        grid-column: 1 / 2;
+        text-align: left;
+        margin: 0;
+    }
+
+    .description h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 3em;
+    }
+
+    .reviews {
+        grid-column: 2 / 4;
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .reviews .rated-review:first-of-type {
+        margin-right: 6em;
+    }
+
+    .reviews .rated-review:nth-child(2) {
+        margin-right: 3em;
+    }
+
+
+    .rated-review {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: .5em 0;
+        align-items: center;
+        justify-items: start;
+        width: 360px;
+
+    }
+
+    .star-row {
+        padding: 0;
+        padding-left: 1em;
+    }
+
+    .comments {
+        grid-column: 1 / 4;
+        display:flex;
+        margin: 0;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .buyer-comments {
+        width: 26%;
+        height: 8em;
+    }
+
+    .buyer-comments:nth-child(2) {
+        margin-top: 2em;
+    }
+
+    .buyer-comments:last-of-type {
+        margin-top: 3em;
+    }
+
+}
